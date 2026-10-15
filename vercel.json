@@ -16,7 +16,7 @@
     "extensoes": {
       "root": "experiments/extensoes",
       "runtime": "python",
-      "entrypoint": "main:app"
+      "entrypoint": "index:app"
     }
   },
   "rewrites": [
