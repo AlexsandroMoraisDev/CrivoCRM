@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "app": {
+      "root": ".",
+      "framework": "nextjs",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "extensoes",
+          "format": "url",
+          "env": "EXTENSOES_API_URL"
+        }
+      ]
+    },
+    "extensoes": {
+      "root": "experiments/extensoes",
+      "runtime": "python"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/extensoes/(.*)",
+      "destination": {
+        "service": "extensoes"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    }
+  ]
+}
