@@ -1,5 +1,5 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "$schema": "https://vercel.sh",
   "services": {
     "app": {
       "root": ".",
@@ -15,7 +15,8 @@
     },
     "extensoes": {
       "root": "experiments/extensoes",
-      "runtime": "python"
+      "runtime": "python",
+      "entrypoint": "main:app"
     }
   },
   "rewrites": [
